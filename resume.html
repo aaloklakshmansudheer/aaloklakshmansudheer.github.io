@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aalok Lakshman Sudheer - ATS Resume</title>
+  <meta name="description" content="ATS-Optimized Resume of Aalok Lakshman Sudheer - B.Com PA, CMA Foundation Qualified, Model UN UNSC Awardee." />
+  
+  <style>
+    /* ATS Optimization Base Rules */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #111827;
+      background-color: #f3f4f6;
+      line-height: 1.5;
+      font-size: 10.5pt;
+    }
+
+    /* Screen UI elements */
+    .screen-controls {
+      max-width: 800px;
+      margin: 20px auto 10px auto;
+      padding: 12px 20px;
+      background: #1e293b;
+      color: #f8fafc;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+
+    .btn-primary {
+      background: #06b6d4;
+      color: #0f172a;
+    }
+    .btn-primary:hover {
+      background: #22d3ee;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #94a3b8;
+      border: 1px solid #475569;
+    }
+    .btn-outline:hover {
+      color: #ffffff;
+      border-color: #cbd5e1;
+    }
+
+    /* Resume Document Container */
+    .resume-page {
+      max-width: 800px;
+      margin: 10px auto 40px auto;
+      background: #ffffff;
+      padding: 40px 48px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+    }
+
+    /* ATS Header */
+    .header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .name {
+      font-size: 24pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .contact-info {
+      font-size: 9.5pt;
+      color: #475569;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-info a {
+      color: #0284c7;
+      text-decoration: none;
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
+
+    .item {
+      margin-bottom: 10px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 700;
+      font-size: 10.5pt;
+      color: #1e293b;
+    }
+
+    .item-subheader {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 10pt;
+      font-style: italic;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    .date, .location {
+      font-weight: normal;
+      font-size: 9.5pt;
+      color: #64748b;
+      font-style: normal;
+    }
+
+    /* Bullet lists */
+    ul {
+      list-style-type: disc;
+      margin-left: 18px;
+      margin-top: 3px;
+    }
+
+    li {
+      font-size: 10pt;
+      color: #334155;
+      margin-bottom: 3px;
+      line-height: 1.45;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 5px;
+      font-size: 10pt;
+    }
+
+    .skills-category {
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .skills-list {
+      color: #334155;
+    }
+
+    /* ATS Print Specific Rules */
+    @media print {
+      @page {
+        margin: 15mm;
+        size: auto;
+      }
+      
+      header, footer, .screen-controls {
+        display: none !important;
+      }
+
+      body {
+        background-color: #ffffff !important;
+        font-size: 10pt;
+      }
+
+      .resume-page {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        max-width: 100% !important;
+      }
+
+      a {
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+
+      .section-title {
+        border-bottom: 1px solid #000000 !important;
+        color: #000000 !important;
+      }
+
+      .item-header, .name, .skills-category {
+        color: #000000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Control Bar (Hidden on Print) -->
+  <div class="screen-controls">
+    <div style="font-size: 13px;">
+      <strong>ATS-Optimized Format:</strong> Clean semantic layout ready for Applicant Tracking Systems & recruiters.
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <a href="index.html" class="btn btn-outline">← Back to Portfolio</a>
+      <button onclick="window.print()" class="btn btn-primary">🖨️ Print / Save as PDF</button>
+    </div>
+  </div>
+
+  <!-- ATS Printable Page -->
+  <main class="resume-page">
+    
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="name">Aalok Lakshman Sudheer</h1>
+      <div class="contact-info">
+        <span>Email: <a href="mailto:aaloklakshmansudheer@gmail.com">aaloklakshmansudheer@gmail.com</a></span>
+        <span>•</span>
+        <span>GitHub: <a href="https://github.com/aaloklakshmansudheer">github.com/aaloklakshmansudheer</a></span>
+        <span>•</span>
+        <span>Location: India</span>
+      </div>
+    </header>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p style="font-size: 10pt; color: #334155; line-height: 1.45;">
+        Quantitative, articulate, and technology-driven professional pursuing a Bachelor of Commerce in Professional Accounting (B.Com PA) and qualified in the CMA Foundation (2025). Award-winning public speaker with 2nd place honors in the United Nations Security Council (UNSC) at PSG MUN, demonstrating proven diplomacy, multilateral negotiation, and research under pressure. Combines commercial acumen with deep enthusiast mastery of computer hardware architecture (GPU/CPU silicon benchmarks) and active technical training in modern web development.
+      </p>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section class="section">
+      <h2 class="section-title">Education & Professional Certifications</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <span>INSTITUTE OF COST ACCOUNTANTS OF INDIA (ICMAI)</span>
+          <span class="date">Passed: 2025</span>
+        </div>
+        <div class="item-subheader">
+          <span>CMA Foundation Certification</span>
+          <span class="location">National Accreditation</span>
+        </div>
+        <ul>
+          <li>Successfully qualified the nationwide foundational examination with rigorous preparation in financial accounting, cost management principles, commercial law, and business economics.</li>
+          <li>Mastered foundational ledger maintenance, financial reporting norms, and arithmetic cost-benefit analyses.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>UNDERGRADUATE DEGREE PROGRAM</span>
+          <span class="date">Currently Pursuing</span>
+        </div>
+        <div class="item-subheader">
+          <span>Bachelor of Commerce – Professional Accounting (B.Com PA)</span>
+          <span class="location">India</span>
+        </div>
+        <ul>
+          <li>Core coursework: Corporate Accounting, Commercial Law, Taxation, Auditing Principles, Business Economics, and Quantitative Techniques for Management.</li>
+          <li>Developing strong foundational abilities in balance sheet evaluation, financial statement reconciliation, and regulatory compliance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HONORS, LEADERSHIP & COMPETITIONS -->
+    <section class="section">
+      <h2 class="section-title">Honors & Diplomatic Leadership</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <span>PSG MODEL UNITED NATIONS (PSG MUN)</span>
+          <span class="date">Awarded 2nd Place</span>
+        </div>
+        <div class="item-subheader">
+          <span>Delegate – United Nations Security Council (UNSC)</span>
+          <span class="location">Coimbatore, India</span>
+        </div>
+        <ul>
+          <li>Secured 2nd Place in the prestigious and highly contested United Nations Security Council committee competing against premier collegiate orators.</li>
+          <li>Authored, debated, and negotiated high-stakes diplomatic draft resolutions addressing complex geopolitical crises, sanctions regimes, and conflict de-escalation.</li>
+          <li>Demonstrated exceptional impromptu speaking, multilateral coalition building, and critical cross-examination under strict procedural timelines.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CORE COMPETENCIES & TECHNICAL SKILLS -->
+    <section class="section">
+      <h2 class="section-title">Core Competencies & Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-category">Accounting & Finance:</div>
+        <div class="skills-list">Financial Accounting, Cost Management Concepts, Regulatory Principles, Commercial Law, Macroeconomic Trends</div>
+
+        <div class="skills-category">Diplomacy & Speech:</div>
+        <div class="skills-list">Public Speaking, Debate, UNSC Parliamentary Procedure, Crisis Negotiation, Coalition Building, Policy Drafting</div>
+
+        <div class="skills-category">Hardware Architecture:</div>
+        <div class="skills-list">NVIDIA GPU Architecture (Ada/Blackwell), AMD RDNA, Intel Core Hybrid Architecture, AMD Zen IPC, Silicon Benchmarking</div>
+
+        <div class="skills-category">Web Dev & Computing:</div>
+        <div class="skills-list">HTML5, Tailwind CSS, Responsive Design, JavaScript Basics, Git & GitHub Pages, Command Line Navigation</div>
+
+        <div class="skills-category">Soft Skills:</div>
+        <div class="skills-list">Strategic Communication, Analytical Thinking, Fast Learner, High-Pressure Problem Solving, Cross-functional Collaboration</div>
+      </div>
+    </section>
+
+    <!-- CURRENT LEARNING JOURNEY & FOCUS (Reframed for beginner failsafe) -->
+    <section class="section">
+      <h2 class="section-title">Current Focus & Practical Projects</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <span>PERSONAL PORTFOLIO & WEB DEVELOPMENT INITIATIVE</span>
+          <span class="date">2026</span>
+        </div>
+        <div class="item-subheader">
+          <span>Interactive Web Showcase & ATS Resume</span>
+          <span class="location">Open Source</span>
+        </div>
+        <ul>
+          <li>Designed and structured a responsive web portfolio leveraging modern HTML5, Tailwind CSS utility classes, and dynamic JavaScript micro-interactions.</li>
+          <li>Implemented semantic, printer-friendly CSS media queries for streamlined ATS parsing and high-contrast digital presentation.</li>
+          <li>Maintained version control workflows utilizing Git and deployed production assets via GitHub Pages.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>SEMICONDUCTOR & HARDWARE MARKET ANALYSIS</span>
+          <span class="date">Ongoing</span>
+        </div>
+        <div class="item-subheader">
+          <span>Independent Technical Research & Evaluation</span>
+          <span class="location">Self-Directed</span>
+        </div>
+        <ul>
+          <li>Tracks technical release cycles, silicon lithography advancements (EUV, node shrinks), and architectural throughput tradeoffs between competing CPU and GPU platforms.</li>
+          <li>Correlates supply chain choke-points, export control policies, and semiconductor fabrication investments with macroeconomic shifts.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

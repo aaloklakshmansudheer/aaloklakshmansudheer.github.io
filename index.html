@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aalok Lakshman Sudheer | Portfolio</title>
+  <meta name="description" content="Portfolio of Aalok Lakshman Sudheer - B.Com PA student, CMA Foundation qualified, UNSC MUN awardee, hardware tech enthusiast, and aspiring web developer." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              bg: '#08090d',
+              card: '#0f111a',
+              border: '#1e2438',
+              cyan: '#06b6d4',
+              neon: '#22d3ee',
+              teal: '#14b8a6',
+              accent: '#38bdf8',
+              dark: '#030407'
+            }
+          },
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          animation: {
+            'blob': 'blob 8s infinite ease-in-out',
+            'blob-delayed': 'blob 8s infinite ease-in-out 4s',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(40px, -60px) scale(1.15)' },
+              '66%': { transform: 'translate(-30px, 30px) scale(0.92)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #08090d;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    
+    /* Cyber Grid Background */
+    .cyber-grid {
+      background-image: linear-gradient(to right, rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Glow utility */
+    .cyan-glow {
+      box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.4);
+    }
+    
+    .cyan-glow-subtle {
+      box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.2);
+    }
+
+    .border-glow:hover {
+      border-color: #06b6d4;
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+    }
+
+    /* Magnetic element transition */
+    .magnetic-btn {
+      transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s ease;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-cyan-500 selection:text-black">
+
+  <!-- Background Ambient Cyberpunk Glowing Blobs -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-32 -left-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-blob"></div>
+    <div class="absolute top-1/2 -right-20 w-[30rem] h-[30rem] bg-teal-500/15 rounded-full blur-3xl animate-blob-delayed"></div>
+    <div class="absolute -bottom-24 left-1/3 w-[26rem] h-[26rem] bg-sky-500/15 rounded-full blur-3xl animate-blob"></div>
+    <div class="absolute inset-0 cyber-grid opacity-80"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#08090d]/80 backdrop-blur-md border-b border-cyber-border">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2 group">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 group-hover:shadow-[0_0_10px_#22d3ee] transition-all"></span>
+        <span class="font-mono font-bold tracking-wider text-sm sm:text-base text-white group-hover:text-cyan-400 transition-colors">
+          AALOK.DEV<span class="text-cyan-400">_</span>
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-mono text-slate-400">
+        <a href="#about" class="hover:text-cyan-400 transition-colors">/about</a>
+        <a href="#journey" class="hover:text-cyan-400 transition-colors">/journey</a>
+        <a href="#interests" class="hover:text-cyan-400 transition-colors">/hardware & passions</a>
+        <a href="#skills" class="hover:text-cyan-400 transition-colors">/skills</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="resume.html" class="magnetic-btn px-4 py-1.5 text-xs font-mono font-semibold rounded-lg bg-cyber-card border border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all flex items-center gap-2">
+          <i class="fa-solid fa-file-invoice text-[10px]"></i> ATS Resume
+        </a>
+        <a href="mailto:aaloklakshmansudheer@gmail.com" class="magnetic-btn hidden sm:flex px-4 py-1.5 text-xs font-mono font-semibold rounded-lg bg-cyan-500 text-black font-bold hover:bg-cyan-400 cyan-glow transition-all items-center gap-2">
+          <i class="fa-regular fa-envelope"></i> Contact
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="relative z-10 pt-28">
+
+    <!-- HERO SECTION (Glowing Gradient Blob + Cyberpunk Minimal) -->
+    <section id="hero" class="max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col items-center text-center">
+      
+      <!-- Tech Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyber-card border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-6 cyan-glow-subtle">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+        </span>
+        System Online // Open to Opportunities & Collaborations
+      </div>
+
+      <!-- Hero Avatar with Failsafe -->
+      <div class="relative mb-8 group">
+        <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 to-teal-400 opacity-75 blur-md group-hover:opacity-100 transition duration-500"></div>
+        <img 
+          src="https://ui-avatars.com/api/?name=Aalok+Lakshman+Sudheer&background=0f111a&color=22d3ee&size=256&bold=true&font-size=0.35" 
+          alt="Aalok Lakshman Sudheer" 
+          class="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full border-2 border-cyan-400/80 object-cover shadow-2xl"
+        />
+        <div class="absolute bottom-1 right-1 bg-cyber-dark text-cyan-400 border border-cyan-400/60 p-1.5 rounded-full text-xs shadow">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+      </div>
+
+      <!-- Title & Headline -->
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-4">
+        Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-teal-300 to-sky-400">Aalok Lakshman Sudheer</span>
+      </h1>
+
+      <!-- Typed Dynamic Subtitle -->
+      <div class="text-lg sm:text-2xl font-mono text-slate-300 mb-6 h-8 flex items-center justify-center gap-2">
+        <span class="text-cyan-400">&gt;</span>
+        <span id="typed-output" class="text-cyan-300 font-medium"></span>
+      </div>
+
+      <!-- Bio Pitch -->
+      <p class="max-w-2xl text-slate-400 text-base sm:text-lg leading-relaxed mb-10">
+        B.Com Professional Accounting scholar & CMA Foundation qualifier bridging the worlds of 
+        <span class="text-cyan-300 font-medium">quantitative finance</span>, 
+        <span class="text-cyan-300 font-medium">diplomatic public speaking</span>, and 
+        <span class="text-cyan-300 font-medium">cutting-edge computer hardware & web technologies</span>.
+      </p>
+
+      <!-- Action Buttons (Magnetic & Glowing) -->
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#journey" class="magnetic-btn px-6 py-3 rounded-lg bg-cyan-500 text-black font-semibold text-sm hover:bg-cyan-400 cyan-glow transition-all flex items-center gap-2">
+          <span>Explore My Journey</span>
+          <i class="fa-solid fa-arrow-down text-xs"></i>
+        </a>
+        <a href="resume.html" class="magnetic-btn px-6 py-3 rounded-lg bg-cyber-card border border-cyber-border text-slate-200 font-medium text-sm hover:border-cyan-400 hover:text-cyan-300 transition-all flex items-center gap-2">
+          <i class="fa-solid fa-file-lines text-cyan-400"></i>
+          <span>View ATS Resume</span>
+        </a>
+        <a href="https://github.com/aaloklakshmansudheer" target="_blank" rel="noopener noreferrer" class="magnetic-btn px-5 py-3 rounded-lg bg-cyber-card border border-cyber-border text-slate-300 hover:text-white hover:border-cyan-400 transition-all flex items-center gap-2 text-sm font-mono">
+          <i class="fa-brands fa-github text-base"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+
+      <!-- Quick Telemetry / Stats Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-4xl mt-16 text-left">
+        <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border border-glow transition-all">
+          <div class="font-mono text-xs text-cyan-400 mb-1">QUALIFICATION</div>
+          <div class="text-lg font-bold text-white">CMA Foundation</div>
+          <div class="text-xs text-slate-400 mt-0.5">Cleared 2025</div>
+        </div>
+        <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border border-glow transition-all">
+          <div class="font-mono text-xs text-cyan-400 mb-1">LEADERSHIP</div>
+          <div class="text-lg font-bold text-white">2nd Place UNSC</div>
+          <div class="text-xs text-slate-400 mt-0.5">PSG Model UN</div>
+        </div>
+        <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border border-glow transition-all">
+          <div class="font-mono text-xs text-cyan-400 mb-1">DEGREE PROGRAM</div>
+          <div class="text-lg font-bold text-white">B.Com (PA)</div>
+          <div class="text-xs text-slate-400 mt-0.5">Professional Accounting</div>
+        </div>
+        <div class="p-4 rounded-xl bg-cyber-card border border-cyber-border border-glow transition-all">
+          <div class="font-mono text-xs text-cyan-400 mb-1">TECH FOCUS</div>
+          <div class="text-lg font-bold text-white">Silicon & Web</div>
+          <div class="text-xs text-slate-400 mt-0.5">Hardware & Modern Code</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: ABOUT / CORE FOCUS -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-20 border-t border-cyber-border">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="font-mono text-cyan-400 text-sm">01 //</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">About & Mission</h2>
+        <div class="h-px bg-cyber-border flex-1 ml-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Main Bio Card -->
+        <div class="md:col-span-2 p-6 sm:p-8 rounded-2xl bg-cyber-card border border-cyber-border border-glow transition-all">
+          <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-compass text-cyan-400"></i>
+            Where Analytical Rigor Meets Tech Curiosity
+          </h3>
+          <p class="text-slate-300 leading-relaxed mb-4">
+            I am currently pursuing a Bachelor of Commerce in Professional Accounting (B.Com PA) and have passed the rigorous <strong>CMA Foundation</strong> milestone in 2025. My academic path is built on quantitative accuracy, business acumen, and financial principles.
+          </p>
+          <p class="text-slate-300 leading-relaxed mb-4">
+            Simultaneously, my intellectual energy drives me deep into the architecture of modern technology: dissecting GPU compute cycles (NVIDIA Ada/Blackwell vs. AMD RDNA), tracking CPU microarchitectures (Intel hybrid cores & AMD Zen), exploring semiconductor geopolitics, and actively training in modern web development to build interactive, functional digital tools.
+          </p>
+          <p class="text-slate-400 text-sm">
+            Whether articulating complex global policies in a high-stakes MUN debate or analyzing tech and economic trends, I bring energy, structured thinking, and relentless curiosity.
+          </p>
+        </div>
+
+        <!-- Key Pillars Card -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-cyber-card border border-cyber-border flex flex-col justify-between">
+          <div>
+            <h4 class="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-4">Core Competency Pillars</h4>
+            <ul class="space-y-3.5 text-sm text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-cyan-400 mt-1 text-xs"></i>
+                <span><strong>Diplomatic Public Speaking:</strong> High-pressure debate & consensus building</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-cyan-400 mt-1 text-xs"></i>
+                <span><strong>Financial Foundation:</strong> CMA Foundation accredited financial logic</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-cyan-400 mt-1 text-xs"></i>
+                <span><strong>Hardware & Architecture:</strong> Deep enthusiast knowledge of silicon & compute</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-cyan-400 mt-1 text-xs"></i>
+                <span><strong>Geopolitics & Economics:</strong> Supply chain, tech sanctions, and global market dynamics</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cyber-border/60">
+            <span class="text-xs font-mono text-slate-400">Current Status:</span>
+            <div class="text-sm font-semibold text-cyan-300 mt-0.5">Active Student & Aspiring Builder</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: LEARNING JOURNEY & CURRENT FOCUS (Beginner Failsafe reframed) -->
+    <section id="journey" class="max-w-6xl mx-auto px-6 py-20 border-t border-cyber-border">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="font-mono text-cyan-400 text-sm">02 //</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Current Focus & Milestones</h2>
+        <div class="h-px bg-cyber-border flex-1 ml-4"></div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Milestone 1: CMA Foundation -->
+        <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border border-glow transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl shrink-0">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 flex-wrap">
+                <h3 class="text-lg font-bold text-white">CMA Foundation Qualified</h3>
+                <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">Credential</span>
+              </div>
+              <p class="text-sm text-slate-400 mt-1">
+                Institute of Cost Accountants of India (ICMAI) • Cleared in 2025
+              </p>
+              <p class="text-sm text-slate-300 mt-2">
+                Demonstrated core competence in financial accounting, cost management principles, business economics, and commercial law.
+              </p>
+            </div>
+          </div>
+          <div class="font-mono text-xs text-cyan-400/80 shrink-0 md:text-right">
+            <span>2025 // COMPLETED</span>
+          </div>
+        </div>
+
+        <!-- Milestone 2: PSG MUN UNSC 2nd Place -->
+        <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border border-glow transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-xl shrink-0">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 flex-wrap">
+                <h3 class="text-lg font-bold text-white">2nd Place – United Nations Security Council (UNSC)</h3>
+                <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-teal-500/20 text-teal-300 border border-teal-500/40">Award</span>
+              </div>
+              <p class="text-sm text-slate-400 mt-1">
+                PSG Model United Nations Conference
+              </p>
+              <p class="text-sm text-slate-300 mt-2">
+                Drafted comprehensive multi-state resolutions, navigated high-tension geopolitical crises, and effectively led diplomatic negotiations representing designated nations in the UNSC.
+              </p>
+            </div>
+          </div>
+          <div class="font-mono text-xs text-teal-400/80 shrink-0 md:text-right">
+            <span>HONOR // DIPLOMACY</span>
+          </div>
+        </div>
+
+        <!-- Milestone 3: B.Com PA Degree -->
+        <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border border-glow transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-xl shrink-0">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 flex-wrap">
+                <h3 class="text-lg font-bold text-white">Bachelor of Commerce (Professional Accounting)</h3>
+                <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-sky-500/20 text-sky-300 border border-sky-500/40">In Progress</span>
+              </div>
+              <p class="text-sm text-slate-400 mt-1">
+                Undergraduate Degree Coursework
+              </p>
+              <p class="text-sm text-slate-300 mt-2">
+                Focused on corporate accounting, taxation frameworks, auditing, business management, and quantitative finance methods.
+              </p>
+            </div>
+          </div>
+          <div class="font-mono text-xs text-sky-400/80 shrink-0 md:text-right">
+            <span>CURRENT ACADEMIC</span>
+          </div>
+        </div>
+
+        <!-- Milestone 4: Web Development & Tech Exploration -->
+        <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border border-glow transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl shrink-0">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 flex-wrap">
+                <h3 class="text-lg font-bold text-white">Web Development & Digital Product Engineering</h3>
+                <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-purple-500/20 text-purple-300 border border-purple-500/40">Learning Path</span>
+              </div>
+              <p class="text-sm text-slate-400 mt-1">
+                Self-Directed Technical Immersion
+              </p>
+              <p class="text-sm text-slate-300 mt-2">
+                Mastering semantic HTML5, modern Tailwind/CSS layouts, JavaScript DOM manipulation, Git version control, and GitHub Pages deployment.
+              </p>
+            </div>
+          </div>
+          <div class="font-mono text-xs text-purple-400/80 shrink-0 md:text-right">
+            <span>ACTIVE BUILD // 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: HARDWARE & DOMAIN PASSIONS -->
+    <section id="interests" class="max-w-6xl mx-auto px-6 py-20 border-t border-cyber-border">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="font-mono text-cyan-400 text-sm">03 //</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Silicon, Tech & Geopolitics</h2>
+        <div class="h-px bg-cyber-border flex-1 ml-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1: GPU Architecture -->
+        <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border border-glow transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 mb-4">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">GPU Compute & Silicon</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4">
+              Fascinated by semiconductor microarchitectures: NVIDIA CUDA/Tensor core scaling (Ada Lovelace, Blackwell) vs. AMD RDNA compute units, VRAM bandwidth bottlenecks, and modern AI acceleration pipelines.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-cyber-border">
+            <span class="px-2 py-0.5 text-xs font-mono rounded bg-cyber-bg text-cyan-300 border border-cyber-border">NVIDIA Ada/Blackwell</span>
+            <span class="px-2 py-0.5 text-xs font-mono rounded bg-cyber-bg text-cyan-300 border border-cyber-border">AMD RDNA</span>
+            <span class="px-2 py-0.5 text-xs font-mono rounded bg-cyber-bg text-cyan-300 border border-cyber-border">Ray Tracing & AI</span>
+          </div>
+        </div>
+
+        <!-- Card 2: CPU Microarchitectures -->
+        <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border border-glow transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">CPU Architecture & IPC</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4">
+              Closely tracking x86 evolution: AMD Zen chiplet topology & 3D V-Cache mechanics compared against Intel Performance/Efficient hybrid tile architecture, IPC improvements, and node efficiency.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-cyber-border">
+            <span class="px-2 py-0.5 text-xs font-mono rounded bg-cyber-bg text-cyan-300 border border-cyber-border">AMD Zen 4/5</span>
+            <span class="px-2 py-0.5 text-xs font-mono rounded bg-cyber-bg text-cyan-300 border border-cyber-border">Intel Hybrid Cores</span>
+            <span class="px-2 py-0.5 text-xs font-mono rounded bg-cyber-bg text-cyan-300 border border-cyber-border">3D V-Cache</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Geopolitics & Economics -->
+        <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border border-glow transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-4">
+              <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Economics & Geopolitics</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4">
+              Passionate student of global trade, macroeconomic policies, sovereign debt structures, and the geopolitical battle for semiconductor fabrication fabs (TSMC, ASML lithography, export controls).
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-cyber-border">
+            <span class="px-2 py-0.5 text-xs font-mono rounded bg-cyber-bg text-cyan-300 border border-cyber-border">Semiconductor Geopolitics</span>
+            <span class="px-2 py-0.5 text-xs font-mono rounded bg-cyber-bg text-cyan-300 border border-cyber-border">Macroeconomics</span>
+            <span class="px-2 py-0.5 text-xs font-mono rounded bg-cyber-bg text-cyan-300 border border-cyber-border">UN Diplomacy</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SKILLS MATRIX -->
+    <section id="skills" class="max-w-6xl mx-auto px-6 py-20 border-t border-cyber-border">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="font-mono text-cyan-400 text-sm">04 //</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Skills & Capabilities</h2>
+        <div class="h-px bg-cyber-border flex-1 ml-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Skill Group 1 -->
+        <div class="p-5 rounded-xl bg-cyber-card border border-cyber-border">
+          <div class="flex items-center gap-2 text-cyan-400 font-mono text-sm font-semibold mb-4">
+            <i class="fa-solid fa-comments"></i> Communication & Soft Skills
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Public Speaking & Oratory</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Diplomatic Negotiation</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Crisis Committee Debate</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Analytical Presentation</li>
+          </ul>
+        </div>
+
+        <!-- Skill Group 2 -->
+        <div class="p-5 rounded-xl bg-cyber-card border border-cyber-border">
+          <div class="flex items-center gap-2 text-cyan-400 font-mono text-sm font-semibold mb-4">
+            <i class="fa-solid fa-chart-line"></i> Finance & Accounting
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Financial Accounting (CMA)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Costing Fundamentals</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Commercial Business Law</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Economic Trend Analysis</li>
+          </ul>
+        </div>
+
+        <!-- Skill Group 3 -->
+        <div class="p-5 rounded-xl bg-cyber-card border border-cyber-border">
+          <div class="flex items-center gap-2 text-cyan-400 font-mono text-sm font-semibold mb-4">
+            <i class="fa-solid fa-laptop-code"></i> Tech & Hardware Analysis
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> GPU Architecture Evaluation</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> CPU Microarchitecture Analysis</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> PC System Architecture & Specs</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Tech Benchmark Interpretation</li>
+          </ul>
+        </div>
+
+        <!-- Skill Group 4 -->
+        <div class="p-5 rounded-xl bg-cyber-card border border-cyber-border">
+          <div class="flex items-center gap-2 text-cyan-400 font-mono text-sm font-semibold mb-4">
+            <i class="fa-solid fa-code"></i> Web Dev & Tools
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Semantic HTML5 & Modern CSS</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Tailwind CSS Layouts</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> JavaScript DOM Scripting</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Git & GitHub Pages</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CONNECT / FOOTER -->
+    <section id="contact" class="max-w-6xl mx-auto px-6 py-20 border-t border-cyber-border">
+      <div class="p-8 sm:p-12 rounded-3xl bg-cyber-card border border-cyan-500/30 cyan-glow-subtle text-center relative overflow-hidden">
+        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="relative z-10 max-w-xl mx-auto">
+          <h2 class="text-3xl font-extrabold text-white mb-3">Let's Connect & Collaborate</h2>
+          <p class="text-slate-400 mb-8 text-sm sm:text-base">
+            Whether you want to discuss cutting-edge silicon architectures, global economics, or exciting projects and internships, my inbox is always open.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-4">
+            <a href="mailto:aaloklakshmansudheer@gmail.com" class="magnetic-btn px-6 py-3 rounded-lg bg-cyan-500 text-black font-bold text-sm hover:bg-cyan-400 cyan-glow transition-all flex items-center gap-2">
+              <i class="fa-solid fa-envelope"></i>
+              <span>aaloklakshmansudheer@gmail.com</span>
+            </a>
+            <a href="https://github.com/aaloklakshmansudheer" target="_blank" rel="noopener noreferrer" class="magnetic-btn px-6 py-3 rounded-lg bg-cyber-bg border border-cyber-border text-slate-200 hover:border-cyan-400 hover:text-cyan-300 transition-all flex items-center gap-2 text-sm font-mono">
+              <i class="fa-brands fa-github"></i>
+              <span>github.com/aaloklakshmansudheer</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-cyber-border/70 py-8 text-center text-xs font-mono text-slate-500 relative z-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        Designed for <span class="text-cyan-400">Aalok Lakshman Sudheer</span> &copy; 2026
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="resume.html" class="hover:text-cyan-400 transition-colors">ATS Resume</a>
+        <span>•</span>
+        <a href="https://github.com/aaloklakshmansudheer" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">GitHub Profile</a>
+        <span>•</span>
+        <a href="#hero" class="hover:text-cyan-400 transition-colors">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Typed.js for dynamic typing in Hero -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    // Initialize Typed.js
+    const typed = new Typed('#typed-output', {
+      strings: [
+        'B.Com PA Student',
+        'CMA Foundation Qualified (2025)',
+        '2nd Place UNSC @ PSG MUN',
+        'PC Hardware & Silicon Enthusiast',
+        'Aspiring Web Developer'
+      ],
+      typeSpeed: 45,
+      backSpeed: 25,
+      backDelay: 1800,
+      loop: true,
+      cursorChar: '▋'
+    });
+
+    // Magnetic Button Effect
+    const magneticBtns = document.querySelectorAll('.magnetic-btn');
+    magneticBtns.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0px, 0px)';
+      });
+    });
+  </script>
+</body>
+</html>
